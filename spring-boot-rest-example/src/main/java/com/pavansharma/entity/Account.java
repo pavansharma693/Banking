@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.*;
 import javax.persistence.Id;
 
@@ -30,6 +31,9 @@ public class Account {
 	
 	@Column(name = "bank_name")
 	private String bank_name;
+	
+	@Version
+	private Integer version;
 	
 	public String getNumber() {
 		return number;

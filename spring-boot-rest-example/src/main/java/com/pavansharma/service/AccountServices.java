@@ -56,7 +56,7 @@ public class AccountServices {
 			Account account = accountRepo.getAmount(name);
 			return account;
 		}catch(Exception e) {
-			System.out.println("Error = " +e.getStackTrace());
+			System.out.println("Error = " +e.getStackTrace().toString());
 		}
 		return null;
 	}
@@ -109,8 +109,8 @@ public class AccountServices {
 		axisRepo.save(Credit);
 		accountRepo.saveCredit(String.valueOf(Credit.getBalance()), Credit.getNumber());
 		accountRepo.saveDebit(String.valueOf(Debit.getBalance()), Debit.getNumber());
-		logger.info("Amount " +Credit.getBalance()+ " is Credited successfully to User" +Credit.getName());
-		logger.info("Amount  " +Debit.getBalance()+ " is  Debited successfully to User" +Debit.getName());
+		logger.info("Amount " +Credit.getBalance()+ " is Credited successfully to User " +Credit.getName()+ "on Account " +Credit.getNumber());
+		logger.info("Amount "+Debit.getBalance()+ " is Debited successfully to User " +Debit.getName()+ "on Account "+Debit.getNumber());
 		return axisRepo.save(Debit);
 	}
 	
@@ -120,8 +120,8 @@ public class AccountServices {
 		accountRepo.saveCredit(String.valueOf(Credit.getBalance()), Credit.getNumber());
 		accountRepo.saveDebit(String.valueOf(Debit.getBalance()), Debit.getNumber());
 		hdfcRepo.save(Credit);
-		logger.info("Amount " +Credit.getBalance()+ " is Credited successfully to User" +Credit.getName());
-		logger.info("Amount  " +Debit.getBalance()+ " is  Debited successfully to User" +Debit.getName());
+		logger.info("Amount " +Credit.getBalance()+ " is Credited successfully to User " +Credit.getName()+ "on Account " +Credit.getNumber());
+		logger.info("Amount "+Debit.getBalance()+ " is Debited successfully to User " +Debit.getName()+ "on Account "+Debit.getNumber());
 		return hdfcRepo.save(Debit);
 	}
 	
@@ -131,8 +131,8 @@ public class AccountServices {
 		iciciRepo.save(Credit);
 		accountRepo.saveCredit(String.valueOf(Credit.getBalance()), Credit.getNumber());
 		accountRepo.saveDebit(String.valueOf(Debit.getBalance()), Debit.getNumber());
-		logger.info("Amount " +Credit.getBalance()+ " is Credited successfully to User" +Credit.getName());
-		logger.info("Amount  " +Debit.getBalance()+ " is  Debited successfully to User" +Debit.getName());
+		logger.info("Amount " +Credit.getBalance()+ " is Credited successfully to User " +Credit.getName()+ "on Account " +Credit.getNumber());
+		logger.info("Amount "+Debit.getBalance()+ " is Debited successfully to User " +Debit.getName()+ "on Account "+Debit.getNumber());
 		return iciciRepo.save(Debit);
 	}
 	

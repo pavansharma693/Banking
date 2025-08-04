@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.pavansharma.interfaces.Banks;
@@ -29,11 +31,12 @@ public class Axis implements Banks{
 	
 	@Column(name = "kyc")
 	private String kyc;
-	
+
 	@Column(name = "bank_name")
 	private String bank_name;
 	
-	
+	@Version
+	private Integer version;
 	
 	public String getNumber() {
 		return number;
@@ -77,8 +80,8 @@ public class Axis implements Banks{
 
 	@Override
 	public String toString() {
-		return "Account [number=" + number + ", name=" + name + ", balance=" + balance + ", kyc=" + kyc + ", bank_name="
-				+ bank_name + "]";
+		return "Axis [number=" + number + ", name=" + name + ", balance=" + balance + ", kyc=" + kyc + ", bank_name="
+				+ bank_name + ", version=" + version + "]";
 	}
 	
 	

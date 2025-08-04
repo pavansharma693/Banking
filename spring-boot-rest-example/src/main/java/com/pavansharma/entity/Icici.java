@@ -4,11 +4,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import javax.persistence.Version;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 
 import com.pavansharma.interfaces.Banks;
 
@@ -34,6 +33,9 @@ public class Icici implements Banks{
 	
 	@Column(name = "bank_name")
 	private String bank_name;
+	
+	@Version
+	private Integer version;
 	
 	public String getNumber() {
 		return number;
